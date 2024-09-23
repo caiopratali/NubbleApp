@@ -7,22 +7,24 @@
 
 import React from 'react';
 
-import {
-  SafeAreaView,
-  View,
-} from 'react-native';
+import { SafeAreaView, View } from 'react-native';
+import { ThemeProvider } from '@shopify/restyle';
 
+import { theme } from './src/theme/theme';
 import { Text } from './src/components/Text/Text';
 import { Button } from './src/components/Button/Button';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView>
       <View style={{ paddingHorizontal: 24 }}>
         <Text preset="headingMedium" italic>Hello World</Text>
-        <Button title="Press me" />
+        <Button title="Default" mb="s12" />
+        <Button title="Loading" loading />
       </View>
     </SafeAreaView>
+    </ThemeProvider>
   );
 }
 
