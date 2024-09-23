@@ -4,15 +4,50 @@ import { Text as RNText, TextProps as RNTextProps, TextStyle} from 'react-native
 
 interface TextProps extends RNTextProps {
     preset?: TextVariants;
-}
+    bold?: boolean;
+    semiBold?: boolean;
+    italic?: boolean;
+  }
 
-export function Text({ preset = 'paragraphMedium', style, children, ...rest }: TextProps) {
+export function Text({ preset = 'paragraphMedium', bold, italic, semiBold, style, children, ...rest }: TextProps) {
+
+  const fontFamily = getFontFamily(preset, bold, italic, semiBold);
+
 
     return (
-        <RNText style={[style, $fontSizes[preset]]} {...rest} >
+        <RNText style={[style, { fontFamily }, $fontSizes[preset]]} {...rest} >
             {children}
         </RNText>
     );
+}
+
+function getFontFamily(
+  preset: TextVariants,
+  bold?: boolean,
+  italic?: boolean,
+  semiBold?: boolean,
+) {
+  if (
+    preset === 'headingLarge' ||
+    preset === 'headingMedium' ||
+    preset === 'headingSmall'
+  ) {
+    return italic ? $fontFamily.boldItalic : $fontFamily.bold;
+  }
+  switch (true) {
+    case bold && italic:
+      return $fontFamily.boldItalic;
+    case bold:
+      return $fontFamily.bold;
+    case italic:
+      return $fontFamily.italic;
+    case semiBold && italic:
+      return $fontFamily.mediumItalic;
+    case semiBold:
+      return $fontFamily.medium;
+    default:
+      return $fontFamily.regular;
+  }
 }
 
 type TextVariants =
@@ -34,4 +69,17 @@ const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphSmall: {fontSize: 14, lineHeight: 19.6},
   paragraphCaption: {fontSize: 12, lineHeight: 16.8},
   paragraphCaptionSmall: {fontSize: 10, lineHeight: 14},
+};
+
+const $fontFamily = {
+  black: 'Satoshi-Black',
+  blackItalic: 'Satoshi-BlackItalic',
+  bold: 'Satoshi-Bold',
+  boldItalic: 'Satoshi-BoldItalic',
+  italic: 'Satoshi-Italic',
+  light: 'Satoshi-Light',
+  lightItalic: 'Satoshi-LightItalic',
+  medium: 'Satoshi-Medium',
+  mediumItalic: 'Satoshi-MediumItalic',
+  regular: 'Satoshi-Regular',
 };
