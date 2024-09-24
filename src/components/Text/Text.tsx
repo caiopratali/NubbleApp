@@ -1,24 +1,40 @@
 import React from 'react';
+import { TextStyle } from 'react-native';
+import { createText } from '@shopify/restyle';
 
-import { Text as RNText, TextProps as RNTextProps, TextStyle} from 'react-native';
+import { Theme } from '../../theme/theme';
 
-interface TextProps extends RNTextProps {
-    preset?: TextVariants;
-    bold?: boolean;
-    semiBold?: boolean;
-    italic?: boolean;
-  }
+const SRText = createText<Theme>();
+type SRTextProps = React.ComponentProps<typeof SRText>;
 
-export function Text({ preset = 'paragraphMedium', bold, italic, semiBold, style, children, ...rest }: TextProps) {
+interface TextProps extends SRTextProps {
+  preset?: TextVariants;
+  bold?: boolean;
+  semiBold?: boolean;
+  italic?: boolean;
+}
+
+export function Text({
+  preset = 'paragraphMedium',
+  bold,
+  italic,
+  semiBold,
+  style,
+  children,
+  ...srTextProps
+}: TextProps) {
 
   const fontFamily = getFontFamily(preset, bold, italic, semiBold);
 
-
-    return (
-        <RNText style={[style, { fontFamily }, $fontSizes[preset]]} {...rest} >
-            {children}
-        </RNText>
-    );
+  return (
+    <SRText
+      color="backgroundContrast"
+      style={[style, { fontFamily }, $fontSizes[preset]]}
+      {...srTextProps}
+    >
+      {children}
+    </SRText>
+  );
 }
 
 function getFontFamily(
@@ -61,14 +77,14 @@ type TextVariants =
   | 'paragraphCaptionSmall';
 
 const $fontSizes: Record<TextVariants, TextStyle> = {
-  headingLarge: {fontSize: 32, lineHeight: 38.4},
-  headingMedium: {fontSize: 22, lineHeight: 26.4},
-  headingSmall: {fontSize: 18, lineHeight: 23.4},
-  paragraphLarge: {fontSize: 18, lineHeight: 25.2},
-  paragraphMedium: {fontSize: 16, lineHeight: 22.4},
-  paragraphSmall: {fontSize: 14, lineHeight: 19.6},
-  paragraphCaption: {fontSize: 12, lineHeight: 16.8},
-  paragraphCaptionSmall: {fontSize: 10, lineHeight: 14},
+  headingLarge: { fontSize: 32, lineHeight: 38.4 },
+  headingMedium: { fontSize: 22, lineHeight: 26.4 },
+  headingSmall: { fontSize: 18, lineHeight: 23.4 },
+  paragraphLarge: { fontSize: 18, lineHeight: 25.2 },
+  paragraphMedium: { fontSize: 16, lineHeight: 22.4 },
+  paragraphSmall: { fontSize: 14, lineHeight: 19.6 },
+  paragraphCaption: { fontSize: 12, lineHeight: 16.8 },
+  paragraphCaptionSmall: { fontSize: 10, lineHeight: 14 },
 };
 
 const $fontFamily = {
