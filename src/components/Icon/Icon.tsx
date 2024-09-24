@@ -39,10 +39,10 @@ export interface IconBase {
 interface Props {
     name: IconName;
     color?: ThemeColors;
-    size: number;
+    size?: number;
 }
 
-export function Icon({ name, color = 'backgroundContrast', size }: Props) {
+export function Icon({ name, color = 'backgroundContrast', size = 20 }: Props) {
 
     const { colors } = UseAppTheme();
 
