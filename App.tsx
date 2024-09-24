@@ -24,6 +24,8 @@ function App(): React.JSX.Element {
         <Button title="Outline" preset="outline" mb="s12" />
         <Button title="Loading" preset="outline" loading mb="s12" />
         <Button title="Loading" loading mb="s12" />
+        <Button title="Disabled" preset="outline" disabled mb="s12" />
+        <Button title="Disabled" disabled mb="s12" />
       </View>
     </SafeAreaView>
     </ThemeProvider>
