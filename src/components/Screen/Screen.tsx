@@ -22,7 +22,7 @@ export function Screen({ children, canGoBack = false, scrollable = false }: Scre
     const Container = scrollable ? ScrollViewContainer : ViewContainer;
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1  }}>
             <Container backgroundColor={colors.background}>
                 <Box paddingHorizontal="s24" style={{ paddingTop: top, paddingBottom: bottom }}>
                     {

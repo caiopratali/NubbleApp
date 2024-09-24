@@ -10,7 +10,7 @@ import { Box, BoxProps } from '../Box/Box';
 import { UseAppTheme } from '../../hooks/useAppTheme';
 import { Text, $fontFamily, $fontSizes } from '../Text/Text';
 
-interface TextInputProps extends RNTextInputProps {
+export interface TextInputProps extends RNTextInputProps {
     label: string;
     errorMessage?: string;
     RightComponent?: React.ReactElement;
