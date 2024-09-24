@@ -1,14 +1,18 @@
 import React from 'react';
 import { Box } from '../Box/Box';
+import { UseAppSafeArea } from '../../hooks/useAppSafeArea';
 
 interface ScreenProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 export function Screen({ children }: ScreenProps) {
-  return (
-    <Box paddingHorizontal="s24">
-        {children}
-    </Box>
-  );
+
+    const { top } = UseAppSafeArea();
+
+    return (
+        <Box paddingHorizontal="s24" style={{ paddingTop: top }}>
+            {children}
+        </Box>
+    );
 }
