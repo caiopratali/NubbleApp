@@ -21,8 +21,9 @@ function App(): React.JSX.Element {
       <View style={{ paddingHorizontal: 24 }}>
         <Text preset="headingMedium" italic>Hello World</Text>
         <Button title="Default" mb="s12" />
+        <Button title="Outline" preset="outline" mb="s12" />
+        <Button title="Loading" preset="outline" loading mb="s12" />
         <Button title="Loading" loading mb="s12" />
-        <Button title="Outline" preset="outline" />
       </View>
     </SafeAreaView>
     </ThemeProvider>
