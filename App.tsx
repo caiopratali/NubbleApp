@@ -7,12 +7,12 @@
 
 import React from 'react';
 
-import { SafeAreaView, View } from 'react-native';
 import { ThemeProvider } from '@shopify/restyle';
+import { SafeAreaView, View } from 'react-native';
 
 import { theme } from './src/theme/theme';
+import { Icon } from './src/components/Icon/Icon';
 import { Text } from './src/components/Text/Text';
-import { Button } from './src/components/Button/Button';
 
 function App(): React.JSX.Element {
   return (
@@ -20,12 +20,7 @@ function App(): React.JSX.Element {
       <SafeAreaView>
       <View style={{ paddingHorizontal: 24 }}>
         <Text preset="headingMedium" italic>Hello World</Text>
-        <Button title="Default" mb="s12" />
-        <Button title="Outline" preset="outline" mb="s12" />
-        <Button title="Loading" preset="outline" loading mb="s12" />
-        <Button title="Loading" loading mb="s12" />
-        <Button title="Disabled" preset="outline" disabled mb="s12" />
-        <Button title="Disabled" disabled mb="s12" />
+        <Icon name="eyeOn" size={40} />
       </View>
     </SafeAreaView>
     </ThemeProvider>
