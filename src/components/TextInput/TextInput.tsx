@@ -40,6 +40,7 @@ export function TextInput({ label, errorMessage, RightComponent, boxProps, ...re
                 <Box {...$textInputContainer} flexDirection="row" >
                     <RNTextInput
                         ref={inputRef}
+                        autoCapitalize="none"
                         style={$textInputStyle}
                         placeholderTextColor={colors.gray2}
                         {...rest}
