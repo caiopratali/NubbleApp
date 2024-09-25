@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Pressable } from 'react-native';
 import { ThemeColors } from '../../theme/theme';
 import { UseAppTheme } from '../../hooks/useAppTheme';
 
@@ -30,21 +31,22 @@ import { ProfileFillIcon } from '../../assets/icons/ProfileFillIcon';
 import { SearchIcon } from '../../assets/icons/SearchIcon';
 import { SettingsIcon } from '../../assets/icons/SettingsIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
-import { Pressable } from 'react-native';
+import { CheckRoundIcon } from '../../assets/icons/CheckRoundIcon';
+import { MessageRoundIcon } from '../../assets/icons/MessageRoundIcon';
 
 export interface IconBase {
     size?: number;
     color?: string;
 }
 
-interface Props {
+export interface IconProps {
     name: IconName;
     color?: ThemeColors;
     size?: number;
     onPress?: () => void;
 }
 
-export function Icon({ name, color = 'backgroundContrast', size = 20, onPress}: Props) {
+export function Icon({ name, color = 'backgroundContrast', size, onPress}: IconProps) {
 
     const { colors } = UseAppTheme();
 
@@ -72,6 +74,7 @@ const iconRegistry = {
     chat: ChatIcon,
     chatOn: ChatOnIcon,
     check: CheckIcon,
+    checkRound: CheckRoundIcon,
     comment: CommentIcon,
     chevronRight: ChevronRightIcon,
     eyeOn: EyeOnIcon,
@@ -83,6 +86,7 @@ const iconRegistry = {
     home: HomeIcon,
     homeFill: HomeFillIcon,
     message: MessageIcon,
+    messageRound: MessageRoundIcon,
     newPost: NewPostIcon,
     profile: ProfileIcon,
     profileFill: ProfileFillIcon,
