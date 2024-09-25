@@ -1,19 +1,19 @@
 import React from 'react';
-import { Screen } from '../../../components/Screen/Screen';
+
 import { Text } from '../../../components/Text/Text';
-import { TextInput } from '../../../components/TextInput/TextInput';
 import { Button } from '../../../components/Button/Button';
+import { Screen } from '../../../components/Screen/Screen';
+import { TextInput } from '../../../components/TextInput/TextInput';
 import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../routes/Routes';
+import { useResetNavigationSuccess } from '../../../hooks/useResetNavigationSuccess';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUp'>;
+export function SignUpScreen() {
 
-export function SignUpScreen({ navigation }: ScreenProps) {
+    const { reset } = useResetNavigationSuccess();
 
     function submitForm() {
         // TODO: Implementar a lógica de criação de conta
-        navigation.navigate('Success', {
+        reset({
             title: 'Sua conta foi criada com sucesso!',
             description: 'Agora é só fazer login na nossa plataforma',
             icon: {

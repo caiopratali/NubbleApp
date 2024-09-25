@@ -12,9 +12,13 @@ type ScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 export function LoginScreen({ navigation }: ScreenProps) {
 
-    const navigateToSignUpScreen = () => {
+    function navigateToSignUpScreen () {
         navigation.navigate('SignUp');
-    };
+    }
+
+    function navigateToForgotPasswordScreen() {
+        navigation.navigate('ForgotPassword');
+    }
 
     return (
         <Screen scrollable>
@@ -36,7 +40,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
             />
 
 
-            <Text preset="paragraphSmall" color="primary" bold>
+            <Text preset="paragraphSmall" color="primary" bold onPress={navigateToForgotPasswordScreen}>
                 Esqueci minha senha
             </Text>
 
