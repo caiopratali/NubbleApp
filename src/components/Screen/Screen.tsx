@@ -1,9 +1,11 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { KeyboardAvoidingView, Platform } from 'react-native';
 
-import { UseAppSafeArea, UseAppTheme } from '@hooks';
+import { useNavigation } from '@react-navigation/native';
+
 import { Box, TouchableOpacityBox, Icon, Text } from '@components';
+import { UseAppSafeArea, UseAppTheme } from '@hooks';
+
 import { ScrollViewContainer, ViewContainer } from './components/ScreenContainer';
 
 interface ScreenProps {

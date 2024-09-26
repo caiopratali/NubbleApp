@@ -1,9 +1,8 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 
-import { useResetNavigationSuccess } from '@hooks';
-import { signUpSchema, SignUpSchema } from './signUpSchema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+
 import {
     Text,
     Button,
@@ -11,6 +10,9 @@ import {
     FormTextInput,
     FormPasswordTextInput,
 } from '@components';
+import { useResetNavigationSuccess } from '@hooks';
+
+import { signUpSchema, SignUpSchema } from './signUpSchema';
 
 export function SignUpScreen() {
 

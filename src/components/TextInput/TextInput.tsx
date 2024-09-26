@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import { UseAppTheme } from '@hooks';
+
 import { Box, BoxProps } from '../Box/Box';
 import { Text, $fontFamily, $fontSizes } from '../Text/Text';
 
