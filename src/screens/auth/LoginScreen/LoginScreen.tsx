@@ -1,24 +1,23 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { Text } from '../../../components/Text/Text';
+import { loginSchema, LoginSchema } from './loginSchema';
 import { Button } from '../../../components/Button/Button';
 import { Screen } from '../../../components/Screen/Screen';
 import { RootStackParamList } from '../../../routes/Routes';
-import { TextInput } from '../../../components/TextInput/TextInput';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
-import { Controller, useForm } from 'react-hook-form';
+import { FormTextInput } from '../../../components/Form/FormTextInput';
+import { FormPasswordTextInput } from '../../../components/Form/FormPasswordTextInput';
 
-type LoginFormType = {
-    email: string;
-    password: string;
-};
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 export function LoginScreen({ navigation }: ScreenProps) {
 
-    const { control, formState, handleSubmit } = useForm<LoginFormType>({
+    const { control, formState, handleSubmit } = useForm<LoginSchema>({
+        resolver: zodResolver(loginSchema),
         defaultValues: {
             email: '',
             password: '',
@@ -26,7 +25,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
         mode: 'onChange',
     });
 
-    function onSubmit (data: LoginFormType) {
+    function onSubmit (data: LoginSchema) {
         console.log(data);
     }
 
@@ -40,23 +39,20 @@ export function LoginScreen({ navigation }: ScreenProps) {
 
     return (
         <Screen scrollable>
-            <Text
-                mb="s8"
-                preset="headingLarge"
-            >
+            <Text mb="s8" preset="headingLarge" >
                 Olá!
             </Text>
 
-            <Text
-                mb="s40"
-                preset="paragraphLarge"
-            >
+            <Text mb="s40" preset="paragraphLarge" >
                 Digite seu e-mail e senha para entrar
             </Text>
 
-            <Controller
+            <FormTextInput
                 control={control}
                 name="email"
+                label="E-mail"
+                placeholder="Digite seu e-mail"
+                boxProps={{ mb: 's20' }}
                 rules={{
                     required: 'E-mail é obrigatório',
                     pattern: {
@@ -64,23 +60,14 @@ export function LoginScreen({ navigation }: ScreenProps) {
                         message: 'E-mail inválido',
                     },
                 }}
-                render={({ field, fieldState }) => (
-                    <TextInput
-                        value={field.value}
-                        onChangeText={field.onChange}
-                        errorMessage={fieldState.error?.message}
-                        label="E-mail"
-                        placeholder="Digite seu e-mail"
-                        boxProps={{
-                            mb: 's20',
-                        }}
-                    />
-                )}
             />
 
-            <Controller
+            <FormPasswordTextInput
                 control={control}
                 name="password"
+                label="Senha"
+                boxProps={{ mb: 's10' }}
+                placeholder="Digite sua senha"
                 rules={{
                     required: 'Senha é obrigatória',
                     minLength: {
@@ -88,18 +75,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
                         message: 'Senha deve ter no mínimo 8 caracteres',
                     },
                 }}
-                render={({ field, fieldState }) => (
-                    <PasswordInput
-                        label="Senha"
-                        value={field.value}
-                        boxProps={{ mb: 's10' }}
-                        onChangeText={field.onChange}
-                        placeholder="Digite sua senha"
-                        errorMessage={fieldState.error?.message}
-                    />
-                )}
             />
-
 
             <Text
                 bold
