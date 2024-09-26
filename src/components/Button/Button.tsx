@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { Text } from '../Text/Text';
 import { buttonPresets } from './buttonPresets';
-import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box';
 import { ActivityIndicator } from '../ActivityIndicator/ActivityIndicator';
+import { TouchableOpacityBox, TouchableOpacityBoxProps, Text } from '@components';
 
 export type ButtonPreset = 'primary' | 'outline';
-
 
 interface ButtonProps extends TouchableOpacityBoxProps {
     title: string;

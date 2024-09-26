@@ -2,12 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { Text } from '../../../components/Text/Text';
-import { Screen } from '../../../components/Screen/Screen';
-import { Button } from '../../../components/Button/Button';
-import { FormTextInput } from '../../../components/Form/FormTextInput';
+import { useResetNavigationSuccess } from '@hooks';
+import { Text, Screen, Button, FormTextInput } from '@components';
 import { forgotPasswordSchema, ForgotPasswordSchema } from './forgotPasswordSchema';
-import { useResetNavigationSuccess } from '../../../hooks/useResetNavigationSuccess';
 
 
 export function ForgotPasswordScreen() {

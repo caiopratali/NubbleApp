@@ -2,13 +2,15 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { Text } from '../../../components/Text/Text';
-import { Button } from '../../../components/Button/Button';
-import { Screen } from '../../../components/Screen/Screen';
+import { useResetNavigationSuccess } from '@hooks';
 import { signUpSchema, SignUpSchema } from './signUpSchema';
-import { FormTextInput } from '../../../components/Form/FormTextInput';
-import { useResetNavigationSuccess } from '../../../hooks/useResetNavigationSuccess';
-import { FormPasswordTextInput } from '../../../components/Form/FormPasswordTextInput';
+import {
+    Text,
+    Button,
+    Screen,
+    FormTextInput,
+    FormPasswordTextInput,
+} from '@components';
 
 export function SignUpScreen() {
 
