@@ -4,92 +4,91 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
 import {
-    Text,
-    Button,
-    Screen,
-    FormTextInput,
-    FormPasswordTextInput,
+  Text,
+  Button,
+  Screen,
+  FormTextInput,
+  FormPasswordTextInput,
 } from '@components';
 import { useResetNavigationSuccess } from '@hooks';
+import { AuthScreenProps } from '@routes';
 
 import { signUpSchema, SignUpSchema } from './signUpSchema';
 
-export function SignUpScreen() {
+export function SignUpScreen({}: AuthScreenProps<'SignUp'>) {
+  const { reset } = useResetNavigationSuccess();
 
-    const { reset } = useResetNavigationSuccess();
+  const { control, formState, handleSubmit } = useForm<SignUpSchema>({
+    resolver: zodResolver(signUpSchema),
+    defaultValues: {
+      username: '',
+      fullName: '',
+      email: '',
+      password: '',
+    },
+    mode: 'onChange',
+  });
 
-    const { control, formState, handleSubmit } = useForm<SignUpSchema>({
-        resolver: zodResolver(signUpSchema),
-        defaultValues: {
-            username: '',
-            fullName: '',
-            email: '',
-            password: '',
-        },
-        mode: 'onChange',
+  function onSubmit(data: SignUpSchema) {
+    console.log(data);
+
+    reset({
+      title: 'Sua conta foi criada com sucesso!',
+      description: 'Agora é só fazer login na nossa plataforma',
+      icon: {
+        name: 'checkRound',
+        color: 'success',
+      },
     });
+  }
 
-    function onSubmit(data: SignUpSchema) {
-        console.log(data);
+  return (
+    <Screen canGoBack scrollable>
+      <Text preset="headingLarge" mb="s32">
+        Criar uma conta
+      </Text>
 
-        reset({
-            title: 'Sua conta foi criada com sucesso!',
-            description: 'Agora é só fazer login na nossa plataforma',
-            icon: {
-                name: 'checkRound',
-                color: 'success',
-            },
-        });
-    }
+      <FormTextInput
+        control={control}
+        name="username"
+        placeholder="@"
+        label="Seu username"
+        boxProps={{ mb: 's20' }}
+        rules={{
+          required: 'O username é obrigatório',
+        }}
+      />
 
-    return (
-        <Screen canGoBack scrollable>
-            <Text preset="headingLarge" mb="s32">
-                Criar uma conta
-            </Text>
+      <FormTextInput
+        control={control}
+        name="fullName"
+        label="Nome completo"
+        autoCapitalize="words"
+        boxProps={{ mb: 's20' }}
+        placeholder="Digite seu nome completo"
+      />
 
-            <FormTextInput
-                control={control}
-                name="username"
-                placeholder="@"
-                label="Seu username"
-                boxProps={{ mb: 's20' }}
-                rules={{
-                    required: 'O username é obrigatório',
-                }}
+      <FormTextInput
+        control={control}
+        name="email"
+        label="E-mail"
+        placeholder="Digite seu e-mail"
+        boxProps={{ mb: 's20' }}
+      />
 
-            />
+      <FormPasswordTextInput
+        control={control}
+        name="password"
+        label="Senha"
+        boxProps={{ mb: 's10' }}
+        placeholder="Digite sua senha"
+      />
 
-            <FormTextInput
-                control={control}
-                name="fullName"
-                label="Nome completo"
-                autoCapitalize="words"
-                boxProps={{ mb: 's20' }}
-                placeholder="Digite seu nome completo"
-            />
-
-            <FormTextInput
-                control={control}
-                name="email"
-                label="E-mail"
-                placeholder="Digite seu e-mail"
-                boxProps={{ mb: 's20' }}
-            />
-
-            <FormPasswordTextInput
-                control={control}
-                name="password"
-                label="Senha"
-                boxProps={{ mb: 's10' }}
-                placeholder="Digite sua senha"
-            />
-
-            <Button
-                title="Criar minha conta"
-                disabled={!formState.isValid}
-                onPress={handleSubmit(onSubmit)}
-            />
-        </Screen>
-    );
+      <Button
+        title="Criar minha conta"
+        disabled={!formState.isValid}
+        onPress={handleSubmit(onSubmit)}
+      />
+    </Screen>
+  );
 }
