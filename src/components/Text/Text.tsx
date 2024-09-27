@@ -8,7 +8,7 @@ import { Theme } from '@theme';
 const SRText = createText<Theme>();
 type SRTextProps = React.ComponentProps<typeof SRText>;
 
-interface TextProps extends SRTextProps {
+export interface TextProps extends SRTextProps {
   preset?: TextVariants;
   bold?: boolean;
   semiBold?: boolean;
@@ -24,15 +24,13 @@ export function Text({
   children,
   ...srTextProps
 }: TextProps) {
-
   const fontFamily = getFontFamily(preset, bold, italic, semiBold);
 
   return (
     <SRText
       color="backgroundContrast"
       style={[style, { fontFamily }, $fontSizes[preset]]}
-      {...srTextProps}
-    >
+      {...srTextProps}>
       {children}
     </SRText>
   );
