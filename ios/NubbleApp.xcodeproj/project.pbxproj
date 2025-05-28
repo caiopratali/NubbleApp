@@ -50,16 +50,16 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = NubbleApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-NubbleApp-NubbleAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NubbleApp-NubbleAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BDF239F7DB8152A5BFEC9F1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = NubbleApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		2EF04D282CA1FA8F00835D2E /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Bold.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf"; sourceTree = "<group>"; };
-		2EF04D292CA1FA8F00835D2E /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-MediumItalic.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
-		2EF04D2A2CA1FA8F00835D2E /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Medium.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf"; sourceTree = "<group>"; };
-		2EF04D2B2CA1FA8F00835D2E /* Satoshi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Light.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-Light.otf"; sourceTree = "<group>"; };
-		2EF04D2C2CA1FA8F00835D2E /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-LightItalic.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
-		2EF04D2D2CA1FA8F00835D2E /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-BlackItalic.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-BlackItalic.otf"; sourceTree = "<group>"; };
-		2EF04D2E2CA1FA8F00835D2E /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Italic.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-Italic.otf"; sourceTree = "<group>"; };
-		2EF04D2F2CA1FA8F00835D2E /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Regular.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf"; sourceTree = "<group>"; };
-		2EF04D302CA1FA8F00835D2E /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Black.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf"; sourceTree = "<group>"; };
-		2EF04D312CA1FA8F00835D2E /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-BoldItalic.otf"; path = "../../../../../Downloads/Satoshi_Complete/Fonts/OTF/Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
+		2EF04D282CA1FA8F00835D2E /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Bold.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-Bold.otf"; sourceTree = "<group>"; };
+		2EF04D292CA1FA8F00835D2E /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-MediumItalic.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
+		2EF04D2A2CA1FA8F00835D2E /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Medium.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-Medium.otf"; sourceTree = "<group>"; };
+		2EF04D2B2CA1FA8F00835D2E /* Satoshi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Light.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-Light.otf"; sourceTree = "<group>"; };
+		2EF04D2C2CA1FA8F00835D2E /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-LightItalic.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
+		2EF04D2D2CA1FA8F00835D2E /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-BlackItalic.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-BlackItalic.otf"; sourceTree = "<group>"; };
+		2EF04D2E2CA1FA8F00835D2E /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Italic.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-Italic.otf"; sourceTree = "<group>"; };
+		2EF04D2F2CA1FA8F00835D2E /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Regular.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-Regular.otf"; sourceTree = "<group>"; };
+		2EF04D302CA1FA8F00835D2E /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Black.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-Black.otf"; sourceTree = "<group>"; };
+		2EF04D312CA1FA8F00835D2E /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-BoldItalic.otf"; path = "../../../NubbleApp/ios/fonts/Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-NubbleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NubbleApp.debug.xcconfig"; path = "Target Support Files/Pods-NubbleApp/Pods-NubbleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-NubbleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NubbleApp.release.xcconfig"; path = "Target Support Files/Pods-NubbleApp/Pods-NubbleApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-NubbleApp-NubbleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NubbleApp-NubbleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-NubbleApp-NubbleAppTests/Pods-NubbleApp-NubbleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -638,10 +638,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -714,10 +711,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

@@ -1,23 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import {
+  FlatList,
+  ListRenderItemInfo,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 
-import { Button, Screen, Text } from '@components';
+import { Post, postService } from '@domain';
+
+import { PostItem, Screen } from '@components';
 import { AppTabScreenProps } from '@routes';
 
-export function HomeScreen({ navigation }: AppTabScreenProps<'Home'>) {
+import { HomeHeader } from './components/HomeHeader';
+
+export function HomeScreen({}: AppTabScreenProps<'Home'>) {
+  const [postList, setPostList] = useState<Post[]>();
+
+  useEffect(() => {
+    postService.getList().then(list => {
+      setPostList(list);
+    });
+  }, []);
+
+  function renderItem({ item }: ListRenderItemInfo<Post>) {
+    return <PostItem post={item} />;
+  }
+
   return (
-    <Screen>
-      <Text preset="headingLarge">Home Screen</Text>
-
-      <Button
-        title="Settings"
-        onPress={() => navigation.navigate('Settings')}
-      />
-
-      <Button
-        mt="s12"
-        title="Favoritos"
-        onPress={() => navigation.navigate('Favorite')}
+    <Screen style={$screen}>
+      <FlatList
+        data={postList}
+        keyExtractor={item => item.id}
+        renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={<HomeHeader />}
       />
     </Screen>
   );
 }
+
+const $screen: StyleProp<ViewStyle> = {
+  paddingTop: 0,
+  paddingBottom: 0,
+  paddingHorizontal: 0,
+};
