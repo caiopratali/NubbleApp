@@ -1,3 +1,5 @@
 export * from './Post/types';
 export * from './Post/postService';
 export * from './Post/useCases/usePostList';
+
+export * from './hooks/usePaginetedList';

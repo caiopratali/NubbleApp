@@ -27,6 +27,7 @@ export function PostItem({ post }: PostItemProps) {
       />
 
       <PostBottom
+        id={post.id}
         author={post.author}
         text={post.text}
         commentCount={post.commentCount}
