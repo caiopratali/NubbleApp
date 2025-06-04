@@ -12,6 +12,7 @@ export type AppStackParamList = {
   Settings: undefined;
   PostComment: {
     postId: number;
+    postAuthorId: number;
   };
 };
 

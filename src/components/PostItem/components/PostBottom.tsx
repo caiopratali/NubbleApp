@@ -20,6 +20,7 @@ export function PostBottom({
   function navigateToPostCommentScreen() {
     navigation.navigate('PostComment', {
       postId: id,
+      postAuthorId: author.id,
     });
   }
 

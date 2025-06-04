@@ -9,3 +9,5 @@ export * from './TextInput/TextInput';
 export * from './Form/FormPasswordTextInput';
 export * from './PasswordInput/PasswordInput';
 export * from './ActivityIndicator/ActivityIndicator';
+export * from './ProfileAvatar/ProfileAvatar';
+export * from './TextMessage/TextMessage';
