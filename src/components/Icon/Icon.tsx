@@ -17,6 +17,7 @@ import { CheckIcon } from '../../assets/icons/CheckIcon';
 import { CheckRoundIcon } from '../../assets/icons/CheckRoundIcon';
 import { ChevronRightIcon } from '../../assets/icons/ChevronRightIcon';
 import { CommentIcon } from '../../assets/icons/CommentIcon';
+import { ErrorRoundIcon } from '../../assets/icons/ErrorRoundIcon';
 import { EyeOffIcon } from '../../assets/icons/eyeOffIcon';
 import { EyeOnIcon } from '../../assets/icons/eyeOnIcon';
 import { FlashOffIcon } from '../../assets/icons/FlashOffIcon';
@@ -35,64 +36,69 @@ import { SettingsIcon } from '../../assets/icons/SettingsIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
 
 export interface IconBase {
-    size?: number;
-    color?: string;
+  size?: number;
+  color?: string;
 }
 
 export interface IconProps {
-    name: IconName;
-    color?: ThemeColors;
-    size?: number;
-    onPress?: () => void;
+  name: IconName;
+  color?: ThemeColors;
+  size?: number;
+  onPress?: () => void;
 }
 
-export function Icon({ name, color = 'backgroundContrast', size, onPress}: IconProps) {
+export function Icon({
+  name,
+  color = 'backgroundContrast',
+  size,
+  onPress,
+}: IconProps) {
+  const { colors } = UseAppTheme();
 
-    const { colors } = UseAppTheme();
+  const SVGIcon = iconRegistry[name];
 
-    const SVGIcon = iconRegistry[name];
+  if (onPress) {
+    return (
+      <Pressable hitSlop={10} onPress={onPress}>
+        <SVGIcon color={colors[color]} size={size} />
+      </Pressable>
+    );
+  }
 
-    if (onPress) {
-        return (
-            <Pressable hitSlop={10} onPress={onPress}>
-                <SVGIcon color={colors[color]} size={size} />
-            </Pressable>
-        );
-    }
-
-    return <SVGIcon color={colors[color]} size={size} />;
+  return <SVGIcon color={colors[color]} size={size} />;
 }
 
 const iconRegistry = {
-    arrowLeft: ArrowLeftIcon,
-    arrowRight: ArrowRightIcon,
-    bell: BellIcon,
-    bellOn: BellOnIcon,
-    bookmark: BookmarkIcon,
-    bookmarkFill: BookmarkFillIcon,
-    camera: CameraIcon,
-    chat: ChatIcon,
-    chatOn: ChatOnIcon,
-    check: CheckIcon,
-    checkRound: CheckRoundIcon,
-    comment: CommentIcon,
-    chevronRight: ChevronRightIcon,
-    eyeOn: EyeOnIcon,
-    eyeOff: EyeOffIcon,
-    flashOn: FlashOnIcon,
-    flashOff: FlashOffIcon,
-    heart: HeartIcon,
-    heartFill: HeartFillIcon,
-    home: HomeIcon,
-    homeFill: HomeFillIcon,
-    message: MessageIcon,
-    messageRound: MessageRoundIcon,
-    newPost: NewPostIcon,
-    profile: ProfileIcon,
-    profileFill: ProfileFillIcon,
-    search: SearchIcon,
-    settings: SettingsIcon,
-    trash: TrashIcon,
+  arrowLeft: ArrowLeftIcon,
+  arrowRight: ArrowRightIcon,
+  bell: BellIcon,
+  bellOn: BellOnIcon,
+  bookmark: BookmarkIcon,
+  bookmarkFill: BookmarkFillIcon,
+  camera: CameraIcon,
+  chat: ChatIcon,
+  chatOn: ChatOnIcon,
+  check: CheckIcon,
+  checkRound: CheckRoundIcon,
+  comment: CommentIcon,
+  chevronRight: ChevronRightIcon,
+  eyeOn: EyeOnIcon,
+  eyeOff: EyeOffIcon,
+  flashOn: FlashOnIcon,
+  flashOff: FlashOffIcon,
+  heart: HeartIcon,
+  heartFill: HeartFillIcon,
+  home: HomeIcon,
+  homeFill: HomeFillIcon,
+  message: MessageIcon,
+  messageRound: MessageRoundIcon,
+  newPost: NewPostIcon,
+  profile: ProfileIcon,
+  profileFill: ProfileFillIcon,
+  search: SearchIcon,
+  settings: SettingsIcon,
+  trash: TrashIcon,
+  errorRound: ErrorRoundIcon,
 };
 
 type IconType = typeof iconRegistry;
